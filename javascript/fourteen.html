@@ -1,0 +1,58 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script>
+                function validate(){
+                    var name= document.getElementById('fname').value;
+                    if(name==""){
+                        document.getElementById('ferr').style.visibility = "visible";
+                    }
+                }
+                function password(){
+                    var pwd= document.getElementById('password').value;
+                    if(pwd.length<8){
+                        document.getElementById('perr').style.visibility = "visible";
+                    }
+                }
+            </script>
+    
+    </head>
+    <body>
+        <div class="container">
+        <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Registration Form
+                </div>
+                <div class="panel-body">
+                        <div class="form-group">
+                            <label>First Name*</label>
+                            <input type="text" placeholder="firstName" id="fname"
+                                        class="form-control" onblur="validate()"/>
+                            <div class="alert alert-danger" id="ferr" style="visibility: hidden">
+                                Please enter firstname
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label>Email*</label>
+                                <input type="text" placeholder="Email" id="email"
+                                            class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                                <label>Password*</label>
+                                <input type="text" placeholder="Password" id="password"
+                                            class="form-control" onblur="password()"/>
+                                <div class="alert alert-danger" id="perr" style="visibility: hidden">
+                                        Min length should be 8
+                                </div>
+                        </div>
+                        <button type="button" class="btn btn-success">Submit</button>
+                </div>
+            
+                    
+        </div>
+        </div>
+        
+    </body>
+</html>
