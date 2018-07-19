@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <style>
+            .hidden{
+                display:none
+            }
+            .complete{
+                text-decoration: line-through;
+            }
+        </style>
+        <script>
+            function doIt(){
+                alert("i am here")
+                var toDos = $('.js-to-dos');
+                toDos.find('.js-complete').addClass('complete');
+                toDos.parent().removeClass('hidden')
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1 class="js-complete">This is outside</h1>
+        <div class="hidden js-parent">
+            <ul class="js-to-dos">
+                <li class="js-complete">Buy Milk</li>
+                <li>Check Mail</li>
+                <li>Complete TAsk</li>
+            </ul>
+        </div>
+        <input type="button" value="click" onclick="doIt()">
+    </body>
+</html>
