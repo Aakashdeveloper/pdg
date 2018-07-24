@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard.component';
+import { DashComponent } from './dashboard.component';
+import { ProductComponent } from './products/product.component';
 
 @NgModule({
     // All module declare
@@ -12,7 +13,8 @@ import { DashboardComponent } from './dashboard.component';
     // All Components & pipe
     declarations: [
         AppComponent,
-        DashboardComponent
+        DashComponent,
+        ProductComponent
     ],
     // Only main component
     bootstrap: [

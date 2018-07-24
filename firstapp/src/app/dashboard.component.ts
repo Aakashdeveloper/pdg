@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
     template: `<h2>This is dashboard</h2>`
 })
 
-export class DashboardComponent {
+export class DashComponent {
 
 }

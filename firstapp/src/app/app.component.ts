@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
                     <h1>My main Component</h1>
                     <hr>
                     <app-dash></app-dash>
+                    <app-prod></app-prod>
                 </div>`
 
 })
