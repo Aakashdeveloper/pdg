@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 
+import { IProduct } from './product.model';
+
 @Component({
     selector: 'app-prod',
     templateUrl: 'products.component.html'
 })
 
 export class ProductComponent {
-    title: String = '*****Product List';
-    products: any[] = [
+    title: string = '*****Product List';
+    showTable: boolean = true;
+    showImage: boolean = false;
+    filterText: string;
+    products: IProduct[] = [
         {
             '_id': '5a05dacc734d1d68d42d31f3',
             'productId': 1,
@@ -31,6 +36,10 @@ export class ProductComponent {
             'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
           }
     ];
+
+    toggleImage(): void {
+        this.showImage = !this.showImage;
+    }
 }
 
 

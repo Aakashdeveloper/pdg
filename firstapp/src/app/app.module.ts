@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DashComponent } from './dashboard.component';
@@ -8,7 +9,8 @@ import { ProductComponent } from './products/product.component';
 @NgModule({
     // All module declare
     imports: [
-        BrowserModule
+        BrowserModule,
+        FormsModule
     ],
     // All Components & pipe
     declarations: [
