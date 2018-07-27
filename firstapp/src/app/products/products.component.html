@@ -40,10 +40,10 @@
                         <td>
                             <img [src]='product.imageUrl' *ngIf="showImage"/>
                         </td>
-                        <td>{{product.productName | uppercase}}</td>
-                        <td>{{product.productCode | lowercase}}</td>
+                        <td>{{product.productName | uppercode:"upper"}}</td>
+                        <td>{{product.productCode | uppercode:"lower"}}</td>
                         <td>{{product.releaseDate}}</td>
-                        <td>{{product.price | currency:"GBP"}}</td>
+                        <td [ngStyle]="{'background-color':product.price<30  ? 'green' : 'red' }">{{product.price | addValue | currency:"GBP"}}</td>
                         <td>{{product.starRating}}</td>
 
                     </tr>
