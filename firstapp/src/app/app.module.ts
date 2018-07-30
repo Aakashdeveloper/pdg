@@ -7,6 +7,7 @@ import { DashComponent } from './dashboard.component';
 import { ProductComponent } from './products/product.component';
 import { UpperPipe } from './products/upperPipe';
 import { AddValuePipe } from './products/advalue';
+import { FilterPipe } from './products/filterProduct';
 
 @NgModule({
     // All module declare
@@ -20,7 +21,8 @@ import { AddValuePipe } from './products/advalue';
         DashComponent,
         ProductComponent,
         UpperPipe,
-        AddValuePipe
+        AddValuePipe,
+        FilterPipe
     ],
     // Only main component
     bootstrap: [
