@@ -4,7 +4,9 @@ import { IProduct } from './product.model';
 
 @Component({
     selector: 'app-prod',
-    templateUrl: 'products.component.html'
+    templateUrl: 'products.component.html',
+    // styles: ['thead{color:red}', 'h3{color:olive}' ]
+    styleUrls: ['product.component.css']
 })
 
 export class ProductComponent {
@@ -12,6 +14,7 @@ export class ProductComponent {
     showTable: boolean = true;
     showImage: boolean = false;
     filterText: string;
+    imageWidth: number = 50;
     products: IProduct[] = [
         {
             '_id': '5a05dacc734d1d68d42d31f3',
