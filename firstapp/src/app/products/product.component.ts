@@ -11,11 +11,11 @@ import { ProductService } from './product.service';
 })
 
 export class ProductComponent implements OnInit {
-    title: string = '*****Product List';
-    showTable: boolean = true;
-    showImage: boolean = false;
+    title: String = '*****Product List';
+    showTable: Boolean = true;
+    showImage: Boolean = false;
     filterText: string;
-    imageWidth: number = 50;
+    imageWidth: Number = 50;
     products: IProduct[];
 
     constructor(private _productSerivce: ProductService) {}
