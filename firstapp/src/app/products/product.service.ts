@@ -22,6 +22,10 @@ export class ProductService {
         return this._http.get(this._productUrl)
             .pipe(map(this.extractData));
     }
+
+    /*getProducts(): Promise<IProduct[]> {
+        return this._http.get(this._productUrl).toPromise().then(res => res.json());
+    }*/
 }
 
 

@@ -4,7 +4,7 @@ import { IProduct } from './product.model';
 import { ProductService } from './product.service';
 
 @Component({
-    selector: 'app-prod',
+    // selector: 'app-prod',
     templateUrl: 'products.component.html',
     // styles: ['thead{color:red}', 'h3{color:olive}' ]
     styleUrls: ['product.component.css']
@@ -32,6 +32,12 @@ export class ProductComponent implements OnInit {
         this._productSerivce.getProducts()
             .subscribe((data) => this.products = data);
     }
+
+    /*ngOnInit(): void {
+        this._productSerivce.getProducts()
+            .then((data) => this.products = data);
+    }*/
+
 }
 
 
