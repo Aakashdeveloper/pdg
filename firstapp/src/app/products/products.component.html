@@ -41,11 +41,16 @@
                             <img [style.width.px]="imageWidth"
                                 [src]='product.imageUrl' *ngIf="showImage"/>
                         </td>
-                        <td style="font-size: 15px;">{{product.productName | uppercode:"upper"}}</td>
+                        <td style="font-size: 15px;">
+                            <a [routerLink]="['/products', product.productId]" 
+                                [queryParams]="{name:product.productName, img:product.imageUrl, desc:product.description}" >
+                                {{product.productName | uppercode:"upper"}}
+                            </a>
+                        </td>
                         <td>{{product.productCode | uppercode:"lower"}}</td>
                         <td>{{product.releaseDate}}</td>
                         <td [ngStyle]="{'background-color':product.price<30  ? 'green' : 'red' }">{{product.price | addValue | currency:"GBP"}}</td>
-                        <td>
+                        <td> 
                             <app-star [rating]="product.starRating"
                                     (ratingClicked)="onDataRecieve($event)"></app-star>
                         </td>

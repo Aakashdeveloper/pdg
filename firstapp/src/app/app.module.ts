@@ -26,7 +26,7 @@ import { ProductDetailComponent } from './products/product-detail.component';
         HttpModule,
         RouterModule.forRoot([
             {path: 'products', component: ProductComponent},
-            {path: 'products/:id', component: ProductDetailComponent},
+            {path: 'products/:name', component: ProductDetailComponent},
             {path: 'orders', component: OrderComponent},
             {path: 'home', component: HomeComponent},
             {path: '', redirectTo: 'home', pathMatch: 'full'},
