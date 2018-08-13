@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -23,8 +24,8 @@ import { ProductModule } from './products/product.module';
             {path: '', redirectTo: 'home', pathMatch: 'full'},
             {path: '**', component: NotFoundComponent}
         ]),
-        ProductModule
-
+        ProductModule,
+        HttpClientModule
     ],
     // All Components & pipe
     declarations: [
