@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Employee} from '../models/employee.model';
+import { NgForm } from '@angular/forms';
+import { FormPosterService } from '../services/form.service';
 
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
   styleUrls: ['./forms.component.css']
 })
-export class FormsComponent implements OnInit {
+export class FormsComponent {
 
   languages = ['AngularJS', 'ReactJs', 'NodeJS'];
-  model = new Employee('John', 'Andrew', '', '',  'male', true, '');
+  model = new Employee('John', 'Andrew', 'a@a.com', '123456',  'male', true, 'AngularJS');
   hasCodeLangError: Boolean = false;
   disbableSubmit: Boolean = false;
+
+  constructor( private formPoster: FormPosterService) { }
 
   firstToUpper(value: string): void  {
     if (value.length > 0) {
@@ -30,10 +34,13 @@ export class FormsComponent implements OnInit {
       this.disbableSubmit = false;
     }
   }
-  constructor() { }
 
-  ngOnInit() {
+  submitForm(form: NgForm): void {
+    // console.log(form.value);
+    this.formPoster.postEmployee(form.value)
+        .subscribe(data => console.log('success', data));
   }
+
 }
 
 
