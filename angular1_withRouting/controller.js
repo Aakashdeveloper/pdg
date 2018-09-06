@@ -1,24 +1,8 @@
 // IFFE
 (function(){
-    var app = angular.module("githubViewer",[]);
-    var MainController = function($scope,github, $interval,
-            $anchorScroll, $location){
+    var app = angular.module("githubViewer");
+    var MainController = function($scope, $interval,$location){
 
-        var onUserComplete = function(data){
-            console.log(data)
-            $scope.user = data;
-            github.getRepos($scope.user).then(onRepos, onError)
-        }
-
-        var onRepos = function(data){
-            $scope.repos = data;
-            $location.hash("userDetails");
-            $anchorScroll;
-        }
-        var onError = function(reason){
-            $scope.error = " could not fetch data"
-        }
-    
         var decrementCountDown = function(){
             $scope.countdown -=1;
             if($scope.countdown < 1){
@@ -31,17 +15,14 @@
         }
 
         $scope.search = function(username){
-            github.getUser(username).then(onUserComplete, onError)
             if(countdownInterval){
                 $interval.cancel(countdownInterval)
                 $scope.countdown = null;
             }
+            $location.path("/user" + username);
         }
 
         $scope.username = "aakashdeveloper"
-        $scope.name= "Angular App"
-        // $scope.product = Product;
-        $scope.repoSortOrder = "-stargazers_count"
         $scope.countdown = 5;
         startCountdown();
     }

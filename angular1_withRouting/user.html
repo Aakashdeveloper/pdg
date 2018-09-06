@@ -1,0 +1,26 @@
+<div class="card" style="width:400px;float: left;">
+        {{ error }}
+        <img class="card-img-top" ng-src="{{user.avatar_url}}" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h2>{{error}}</h2>
+          <h4 class="card-title">{{user.login}}</h4>
+          <p class="card-text">{{user.bio}}</p>
+          <table>
+              <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Stars</th>
+                    <th>Language</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="repo in repos| orderBy:repoSortOrder">
+                    <td>{{repo.name| uppercase}}</td>
+                    <td>{{repo.stargazers_count }}</td>
+                    <td>{{repo.language}}</td>
+                </tr>
+              </tbody>
+          </table>
+          <a href="#" class="btn btn-primary">See Profile</a>
+        </div>
+</div>
